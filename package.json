@@ -1,7 +1,7 @@
 {
-  "name": "workspace",
+  "name": "blockchain-demo",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "main.js",
   "license": "MIT",
   "dependencies": {
     "@types/sha256": "^0.2.0",
