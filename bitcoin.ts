@@ -16,9 +16,9 @@ interface Transaction {
 }
 
 export class Bitcoin {
-    private blockChain: Array<Block>
-    private _difficulty: number
-    public transactionPool: Array<Transaction>
+    private blockChain: Block[];
+    private _difficulty: number;
+    public transactionPool: Transaction[];
 
 
     constructor() {
