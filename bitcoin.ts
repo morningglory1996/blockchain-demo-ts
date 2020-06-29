@@ -18,12 +18,12 @@ interface Transaction {
 export class Bitcoin {
     private blockChain: Block[];
     private _difficulty: number;
-    public transactionPool: Transaction[];
+    private _transactionPool: Transaction[];
 
 
     constructor() {
         this.blockChain = [];
-        this.transactionPool = [];
+        this._transactionPool = [];
         this._difficulty = 5;
         this.createGenesisBlock();
     }
@@ -46,7 +46,7 @@ export class Bitcoin {
             blockHash
         }
 
-        this.transactionPool = [];
+        this._transactionPool = [];
         this.blockChain.push(newBlock);
     }
 
@@ -89,7 +89,11 @@ export class Bitcoin {
         return this.blockChain[this.blockChain.length - 1]
     }
 
-    set difficulty(n: number) {
+    get transactionPool()  {
+        return this._transactionPool;
+    }
+
+    set setDifficulty(n: number) {
         this._difficulty = n;
     }
 }
